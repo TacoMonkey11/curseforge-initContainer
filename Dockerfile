@@ -1,6 +1,6 @@
-FROM alpine:latest
+FROM debian:stable-slim
 
-RUN apk add --no-cache bash jq curl unzip
+RUN apt update && apt -y install --no-install-recommends jq curl unzip ca-certificates
 
 COPY ./script/find-denied-mods.sh /usr/src/find-denied-mods.sh
 
