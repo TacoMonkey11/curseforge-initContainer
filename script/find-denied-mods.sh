@@ -9,7 +9,7 @@ echo "----------------------------------------------"
 url="https://api.curseforge.com/v1/mods/${MODPACK_ID}/files/${FILE_ID}"
 
 
-json=$(curl -s $url --header "x-api-key: $CF_API_KEY")
+json=$(curl $url --header "x-api-key: $CF_API_KEY")
 
 
 file_name=$(echo "$json" | jq '.data.fileName' | tr -d '"' | jq -sRr @uri)
