@@ -52,5 +52,5 @@ done
 
 # decode file names
 for f in *.jar; do
-    mv "$f" "$(urldecode "$f")"
+    mv --force "$f" "$(urldecode "$f")"
 done
