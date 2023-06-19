@@ -54,3 +54,5 @@ done
 for f in *.jar; do
     mv --force "$f" "$(urldecode "$f")"
 done
+
+echo "All mods downloaded!"
