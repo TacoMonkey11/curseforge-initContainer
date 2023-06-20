@@ -2,14 +2,14 @@ version: '3'
 
 services:
   cf-initcontainer:
-    image: tacomonkey/cf-initcontainer:testing
+    image: tacomonkey/cf-initcontainer:latest
     container_name: cf-initcontainer
     volumes:
       - "./downloads:/downloads"
     environment:
       - CF_API_KEY=${CF_API_KEY}
       - MODPACK_ID=863689 # project id of the modpack
-      - FILE_ID=4566222 #file id of the specific modpack version
+      - FILE_ID=4594293 #file id of the specific modpack version
 
   minecraft:
     image: itzg/minecraft-server:java17-graalvm-ce
@@ -25,7 +25,7 @@ services:
       - TYPE=AUTO_CURSEFORGE
       - CF_PAGE_URL=https://www.curseforge.com/minecraft/modpacks/statech-industry
       - CF_API_KEY=${CF_API_KEY}
-      - CF_EXCLUDE_MODS=627566 # Disabled Memoryleakfix mod, with this mod the server wouldnt boot. See https://github.com/TheStaticVoid/StaTech-Industry/issues/163
+      - CF_EXCLUDE_MODS=627566 704346 356643 475358 406343 393563 407206 398502 619718 365727 337243 547694 401978 541329 566140 417510 280294 313219 365615 629373 271492 459496 495267 455508 679177 325492 356461 308702 365521 363104 511319 385463 447673 394468 282313 521126 521594 547358
     depends_on:
       cf-initcontainer:
         condition: service_completed_successfully
